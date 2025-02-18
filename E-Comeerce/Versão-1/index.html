@@ -1,0 +1,277 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleEats | Cardapio</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="imagens/cart-regular-24.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo_header">
+            <i class='bx bx-md bx-bowl-hot' ></i>
+            <h1>Simple<span>Eats</span></h1>
+        </div>
+        <nav>
+            <button id="btnCart" onclick="openCart()"><i class='bx bx-cart'></i></button>
+            <a href="#arrowIcon">Cardapio</a>
+            <a href="#sociais">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <div id="cart">
+            <div id="produtos_cart">
+                <div id="legendaCarrinho">
+                    <h3>CARRINHO</h3>
+                    <button id="closeCart" onclick="closeCart()">X</button>
+                </div>
+                <div id="produto1_cart">
+                    <div class="detalhes_produto">
+                        <img src="/E-Comeerce/imagens/Salgados/Carbonara.jpg" alt="" class="imgProduto_cart">
+                        <div class="dados_produto">
+                            <div class="name_produto"><p>CARBONARA</p></div>
+                            <div class="quantidade_produto">
+                                <p>Unidades:</p>
+                                <input type="number" min="1" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valorP"><p>R$55</p></div>
+                    <button class="removerProduto" onclick="removerItem()">X</button>
+                </div>
+                <div id="produto2_cart">
+                    <div class="detalhes_produto">
+                        <img src="/E-Comeerce/imagens/Salgados/Capelete.jpg" alt="" class="imgProduto_cart">
+                        <div class="dados_produto">
+                            <div class="name_produto"><p>CAPELETE</p></div>
+                            <div class="quantidade_produto">
+                                <p>Unidades:</p>
+                                <input type="number" min="1" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valorP"><p>R$42.90</p></div>
+                    <button class="removerProduto" onclick="removerItem()">X</button>
+                </div>
+            </div>
+            <div id="valor">
+                <div id="input_cupom">
+                    <input type="text" maxlength="10" placeholder="CUPOM">
+                </div>
+                <div id="resultCompra">
+                   <h3>Total</h3>
+                   <h2>R$97.90</h2>
+                </div>
+            </div>
+            <div id="checkout">
+                <button id="btn_checkout" onclick="checkout()">FINALIZAR</button>
+            </div>
+        </div>
+       <article id="presentation">
+        <div><img src="/E-Comeerce/imagens/Chef-bro.png" alt="Chef"></div>
+        <div id="msg_welcome">
+            <h1>Bem-vindo ao SimpleEats!</h1>
+            <h2>Explore nosso cardápio digital e descubra uma seleção de pratos deliciosos, feitos com amor e ingredientes frescos.</h2>
+        </div>
+       </article>
+        <div id="arrowIcon">
+            <h2>Faça seu pedido de forma rápida e fácil, diretamente do seu dispositivo e deixe-nos cuidar do resto.</h2>
+            <i class='bx bx-chevron-down'></i>
+        </div>
+        <div id="menu_cardapio">
+            <button class="btn_menu" id="btn_pratosPrincipais" onclick="identificarCard('produto_salgado')">Pratos Principais</button>
+            <button class="btn_menu" id="btn_sobremesas" onclick="identificarCard('produto_doce')">Sobremesas</button>
+            <button class="btn_menu" id="btn_bebidas" onclick="identificarCard('produto_bebidas')">Bebidas</button>
+        </div> 
+       <article id="cardapio">
+        <section id="produto_salgado">
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Carbonara.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99.99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Capelete.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Frango Assado.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Macarrão com Camarão.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Macarrão com Trufas.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Panqueca Vegana.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Picanha com batata frita.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Salada com camarão.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/Salada com carne.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Salgados/pexels-olena-bohovyk-3323687.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="produto_doce">
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Sobremesas/Bolo de Baunilha.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Sobremesas/Brownie com Amendoas.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Sobremesas/Brownie com Doce de Leite.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Sobremesas/Cheesecake com Frutas.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Sobremesas/Macarons.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="produto_bebidas">
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Bebidas/smoothie de manga.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Bebidas/smoothie de morango.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Bebidas/Drink Citrico.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos">
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Bebidas/Cafe.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+            <div class="card_produtos">
+                <img src="/E-Comeerce/imagens/Bebidas/Agua.jpg" alt="" class="img_produtos">
+                <div class="dados_produtos"> 
+                    <p>Comida</p>
+                    <h3>$99,99</h3>
+                    <button class="button_buy">Comprar</button>
+                </div>
+            </div>
+        </section>
+       </article>
+    </main>
+    <footer>
+        <div id="sociais">
+            <i class='bx bx-md bxl-instagram'></i>
+            <i class='bx bx-md bxl-twitter'></i>
+            <i class='bx bx-md bxl-facebook-square'></i>
+            <i class='bx bx-md bxl-youtube' style='color:#ffffff' ></i>
+        </div>
+        <a href="#logo_header">
+            <div id="logo_footer">
+                <i class='bx bx-md bx-bowl-hot' ></i>
+                <h1>Simple<span>Eats</span></h1>
+            </div>
+        </a>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
